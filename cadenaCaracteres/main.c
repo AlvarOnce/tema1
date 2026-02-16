@@ -11,6 +11,8 @@ int main() {
 	printf("%zu %zu\n", sizeof(cadena), sizeof(cadena2));
 
 	foo("hola");
-	//a
+	
+	//prueba
+
 	return 0;
 }
