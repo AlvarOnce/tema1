@@ -8,7 +8,7 @@ int main(void) {
 
 	int* lista_heap = malloc(TAM*sizeof(*lista_heap));
 	if (lista_heap == NULL) return 1;
-	if (lista_heap == NULL) return 1
+	if (lista_heap == NULL) return 1;
 
 	free(*lista_heap);
 	lista_heap = NULL;
