@@ -6,8 +6,7 @@ int main(void) {
 
 	int lista_pila[TAM] = { 0,1,2 };
 
-	int* lista_heap = malloc(TAM*sizeof(*lista_heap));
-	if (lista_heap == NULL) return 1;
+	int* lista_heap = malloc(TAM * sizeof(*lista_heap));
 	if (lista_heap == NULL) return 1;
 
 	free(*lista_heap);
@@ -15,3 +14,23 @@ int main(void) {
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
