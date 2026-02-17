@@ -10,6 +10,7 @@ int main() {
     printf("Introduce una palabra: ");
     if (scanf("%s", palabra) != 1) return 1;
 
+    palabra[sizeof(palabra) - 1] = '\0'; // Asegurarse de que la cadena esté terminada en cero
     size_t n = strlen(palabra);
 
     for (i = 0, j = (int)n - 1; i < j; i++, j--) {
