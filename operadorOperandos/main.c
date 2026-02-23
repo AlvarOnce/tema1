@@ -90,15 +90,27 @@ int main(void) {
 	setlocale(LC_ALL, "es_ES");
 
 	printf("Introduzca operando izquierdo:\n");
-	scanf_s("%lld", &operando_izq);
+	while (scanf_s("%lld", &operando_izq) != 1) {
+		printf("Debe introducir un número:\n");
+		while (getchar() != '\n');
+	}
 
 	printf("Introduzca operador (+, -, *, /):\n");
 	scanf_s(" %c", &simbolo, 1);
 
+	while (simbolo != '+' && simbolo != '-' && simbolo != '*' && simbolo != '/') {
+		printf("Operador no valido. Intente de nuevo (+, -, *, /):\n");
+		while (getchar() != '\n'); 
+		scanf_s(" %c", &simbolo, 1);
+	}
+
 	operacion = char_a_operador(simbolo);
 
 	printf("Introduzca operando derecho\n");
-	scanf_s("%lld", &operando_der);
+	while (scanf_s("%lld", &operando_der)!= 1) {
+		printf("Debe introducir un número:\n");
+		while (getchar() != '\n');
+	}
 
 	long long resultado = resuelve_operacion(
 		operando_izq,
@@ -106,7 +118,7 @@ int main(void) {
 		operacion);
 
 	if (resultado != (long long)FLT_MAX) {											/* cte FTL_MAX sirve como centinela */
-		printf("%lld %s %lld = %.6lld\n",
+		printf("%6lld %s %6lld = %6lld\n",
 			operando_izq,
 			operador_str(operacion),
 			operando_der,
