@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enumColor", "enumColor\enum
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "switchNaipes", "switchNaipes\switchNaipes.vcxproj", "{72DD3A0D-748D-4B8D-8C39-0DF661D7FFA2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "operadorOperandos", "operadorOperandos\operadorOperandos.vcxproj", "{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{72DD3A0D-748D-4B8D-8C39-0DF661D7FFA2}.Release|x64.Build.0 = Release|x64
 		{72DD3A0D-748D-4B8D-8C39-0DF661D7FFA2}.Release|x86.ActiveCfg = Release|Win32
 		{72DD3A0D-748D-4B8D-8C39-0DF661D7FFA2}.Release|x86.Build.0 = Release|Win32
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Debug|x64.ActiveCfg = Debug|x64
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Debug|x64.Build.0 = Debug|x64
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Debug|x86.ActiveCfg = Debug|Win32
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Debug|x86.Build.0 = Debug|Win32
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Release|x64.ActiveCfg = Release|x64
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Release|x64.Build.0 = Release|x64
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Release|x86.ActiveCfg = Release|Win32
+		{D13AEFB1-BD83-47B4-8D22-1EF7542C445F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
