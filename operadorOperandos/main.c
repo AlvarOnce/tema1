@@ -13,7 +13,7 @@
 #include <locale.h>							/* para formato decimal con coma en España */
 #include <float.h>							/* centinela FLT_MAX para indicar error en la operación */
 
-#define MAX_BUFFER 100
+#define MAX_BUFFER 1000
 
 typedef enum {
 	SUMA = 0,
@@ -47,7 +47,7 @@ const char* operador_str(operador_t op)
 * todo: patrón mejor para controlar el error - devolver un bool y el resultado por referencia
 * todo: usar NAN incluido en math.h en lugar de FLT_MAX para indicar error en la operación
 **/
-float resuelve_operacion(float lhs, float rhs, operador_t operacion)
+long long resuelve_operacion(long long lhs, long long rhs, operador_t operacion)
 {
 	switch (operacion) {
 	case SUMA:
@@ -57,10 +57,10 @@ float resuelve_operacion(float lhs, float rhs, operador_t operacion)
 	case MUL:
 		return lhs * rhs;
 	case DIV:
-		if (rhs == 0) return FLT_MAX;
+		if (rhs == 0) return (long long)FLT_MAX;
 		return lhs / rhs;
 	default:
-		return FLT_MAX;
+		return (long long)FLT_MAX;
 	}
 	 
 }
@@ -80,8 +80,8 @@ operador_t char_a_operador(char c) {
 *******************/
 
 int main(void) {
-	float operando_izq = 0.0;
-	float operando_der = 0.0;
+	long long operando_izq = 0;
+	long long operando_der = 0;
 	char simbolo;
 	operador_t operacion = NINGUNO;
 
@@ -90,7 +90,7 @@ int main(void) {
 	setlocale(LC_ALL, "es_ES");
 
 	printf("Introduzca operando izquierdo:\n");
-	scanf_s("%f", &operando_izq);
+	scanf_s("%lld", &operando_izq);
 
 	printf("Introduzca operador (+, -, *, /):\n");
 	scanf_s(" %c", &simbolo, 1);
@@ -98,22 +98,22 @@ int main(void) {
 	operacion = char_a_operador(simbolo);
 
 	printf("Introduzca operando derecho\n");
-	scanf_s("%f", &operando_der);
+	scanf_s("%lld", &operando_der);
 
-	float resultado = resuelve_operacion(
+	long long resultado = resuelve_operacion(
 		operando_izq,
 		operando_der,
 		operacion);
 
-	if (resultado != FLT_MAX) {											/* cte FTL_MAX sirve como centinela */
-		printf("%f %s %f = %.6f\n",
+	if (resultado != (long long)FLT_MAX) {											/* cte FTL_MAX sirve como centinela */
+		printf("%lld %s %lld = %.6lld\n",
 			operando_izq,
 			operador_str(operacion),
 			operando_der,
 			resultado);
 	}
 	else {
-		fprintf(stderr, "No se pudo resolver la operación %f %s %f\n",
+		fprintf(stderr, "No se pudo resolver la operación %lld %s %lld\n",
 			operando_izq, operador_str(operacion), operando_der);
 	}
 
