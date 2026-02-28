@@ -135,7 +135,6 @@ void print_mat(mat_t** m, size_t N, size_t M)
 int main(void) {
 	/* asignación dinámica de memoria para una matriz 2 x 3 */
 	mat_t** mat = allocate_mat(2, 3);
-
 	mat[0][0] = 1;
 	mat[1][2] = 1;
 	mat[0][1] = 1;
